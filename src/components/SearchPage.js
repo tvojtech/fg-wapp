@@ -1,12 +1,14 @@
 import React from 'react'
 import { compose, withHandlers, lifecycle, withState } from 'recompose'
-import { Box, Flex, Input, Button } from 'rebass'
+import { Box, Flex } from 'rebass'
 import _fp from 'lodash/fp'
 import qs from 'query-string'
 import WeatherMap from './WeatherMap'
 import withAsyncData from './withAsyncData'
 import Loading from './Loading'
 import Link from './Link'
+import Input from './Input'
+import ButtonTransparent from './ButtonTransparent'
 import * as weatherApi from '../api/weather'
 
 const SearchPage = ({ search, searchChange, performSearch, locations = [], selectedLocation, setSelectedLocation }) => (
@@ -16,8 +18,8 @@ const SearchPage = ({ search, searchChange, performSearch, locations = [], selec
       performSearch()
     }} >
       <Flex>
-        <Input value={search} onChange={evt => searchChange(evt.target.value)} />
-        <Button type="submit">Search</Button>
+        <Input value={search} onChange={evt => searchChange(evt.target.value)} placeholder="Search city" />
+        <ButtonTransparent type="submit">Search</ButtonTransparent>
       </Flex>
     </form>
     {locations.length > 0 &&
