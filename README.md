@@ -21,3 +21,4 @@ Try https://stupefied-galileo-d94d2e.netlify.com/ (May not work)
 - currently the application does not support internationalization, all strings are hardcoded in code
 - the app does not handle errors
 - api key for openweathermap is hardcoded in [src/api/weather.js](./src/api/weather.js) file.
+- setup prettier and eslint
