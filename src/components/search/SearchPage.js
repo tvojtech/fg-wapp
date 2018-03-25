@@ -35,8 +35,10 @@ class SearchPage extends React.Component {
   }
 }
 
+const obtainSearchQueryParam = ({ location }) => qs.parse(location.search).search || ""
+
 const StatefulSearchPage = compose(
-  withState("search", "searchChange", ({ location }) => qs.parse(location.search).search || ""),
+  withState("search", "searchChange", obtainSearchQueryParam),
   withState('selectedLocation', 'setSelectedLocation', undefined),
   withAsyncData(({ location, search }) => ({
     locations: () => {
@@ -46,6 +48,15 @@ const StatefulSearchPage = compose(
       return weatherApi.searchLocations(search).then(_fp.get("list"))
     }
   })),
+  // fixme: after clicking on app logo search is not rerendered
+  // lifecycle({
+  //   componentWillReceiveProps(nextProps) {
+  //     if (nextProps.location.search !== this.props.location.search) {
+  //       this.props.searchChange(obtainSearchQueryParam({ location: this.props.location }))
+  //       this.props.refetch()
+  //     }
+  //   }
+  // }),
   withHandlers({
     performSearch: ({ history, location, refetch, search }) => () => {
       history.push({ search: qs.stringify({ ...qs.parse(location.search), search }) })
