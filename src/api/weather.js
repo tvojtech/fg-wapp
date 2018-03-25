@@ -3,6 +3,7 @@ import _fp from 'lodash/fp'
 
 const urlBase = "https://api.openweathermap.org/data/2.5"
 
+// fixme: store api key outside of code
 const weatherApiKey = '39d717bb99e1175215f4bcfa8f2cbb37'
 
 let executeWeatherGet = (url, params = {}) => request.get(url).query({ ...params, appid: weatherApiKey }).then(_fp.get("body"))

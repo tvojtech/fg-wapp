@@ -37,7 +37,7 @@ class SearchPage extends React.Component {
 
 const StatefulSearchPage = compose(
   withProps(({ location }) => ({ search: qs.parse(location.search).search || "" })),
-  withState("searchText", "searchTextChange", ""),
+  withState("searchText", "searchTextChange", ({location}) => qs.parse(location.search).search || "" ),
   withState('selectedLocation', 'setSelectedLocation', undefined),
   withAsyncData({
     mapFetchToProps: ({ search }) => ({
@@ -52,6 +52,7 @@ const StatefulSearchPage = compose(
       if (nextProps.search !== oldProps.search) {
         return "locations"
       }
+      return false;
     }
   }),
   withHandlers({

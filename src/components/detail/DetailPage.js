@@ -58,6 +58,7 @@ const StatefulDetailPage = compose(
       if (nextProps.showForecast !== oldProps.showForecast) {
         return "forecast"
       }
+      return false
     }
   }),
   withHandlers({
