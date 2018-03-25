@@ -1,13 +1,19 @@
 import React from 'react'
-import {Input} from 'rebass'
+import styled from 'styled-components'
 
-export default Input.extend`
+const StyledInput = styled.input`
   border: 0;
   border-bottom: 1px solid #BEB7A4;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem;
+  padding-left: 1rem;
 
-  &:focus {
+  &:focus, &:active, &:hover {
+    outline: none;
     font-weight: bolder;
-    border: 0;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid black;
   }
 `
+
+export default StyledInput

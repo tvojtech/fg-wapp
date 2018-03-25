@@ -17,6 +17,7 @@ export default
   compose(
     withProps({
       googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+      // fixme: compute proper map height or pass ref to a proper container element?
       loadingElement: <div style={{ height: `400px` }} />,
       containerElement: <div style={{ height: `400px` }} />,
       mapElement: <div style={{ height: `400px` }} />,

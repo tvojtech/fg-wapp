@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
+import 'normalize.css'
 import './App.css';
 import { Box, Toolbar, Flex, BackgroundImage, Image } from 'rebass'
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
 import Link from './components/Link'
 
-import SearchPage from './components/SearchPage'
+import SearchPage from './components/search/SearchPage'
 import DetailPage from './components/detail/DetailPage';
 
 const CustomizedToolbar = Toolbar.extend`
@@ -20,9 +21,11 @@ const pageWithLayout = WrappedComponent => props => (
     <CustomizedToolbar p={1}>
       <Link to="/"><Box w="4rem" m={1}><BackgroundImage m={1} src={logo} /></Box></Link>
     </CustomizedToolbar>
-    <Box>
-      <WrappedComponent {...props} />
-    </Box>
+    <Flex justify="center">
+      <Box w="50rem">
+        <WrappedComponent {...props} />
+      </Box>
+    </Flex>
   </Box>
 )
 
