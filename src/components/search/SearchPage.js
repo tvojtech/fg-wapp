@@ -73,6 +73,8 @@ const StatefulSearchPage = compose(
   withHandlers({
     performSearch: ({ history, location, refetch, searchText }) => () => {
       history.push({ search: qs.stringify({ ...qs.parse(location.search), search: searchText }) })
+      historyApi.pushSearch({ search: searchText })
+      refetch("searches")
     }
   }
   )
