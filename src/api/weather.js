@@ -15,3 +15,5 @@ if (process.env.NODE_ENV !== "development") {
 export const searchLocations = location => executeWeatherGet(`api/weather/find`, { q: location })
 
 export const currentWeather = params => executeWeatherGet(`api/weather/weather`, { ...params, units: "metric" })
+
+export const forecast = params => executeWeatherGet(`api/weather/forecast`, { ...params, units: "metric" })
