@@ -11,7 +11,7 @@ const sectionProps = { w: [1, null, 1 / 3], justify: "center", align: "center" }
 const WeatherItem = ({ weather: { main, weather, wind } }) => (
   <Flex wrap={true} direction="row" justify="space-between">
     <Flex {...sectionProps}>
-      <Image src={`http://openweathermap.org/img/w/${weather[0].icon}.png`} width={1} />
+      <Image src={`https://openweathermap.org/img/w/${weather[0].icon}.png`} width={1} />
     </Flex>
     <Flex {...sectionProps}>
       <Text fontSize={8}>
