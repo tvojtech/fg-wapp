@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 import Link from './components/Link'
 
 import SearchPage from './components/search/SearchPage'
-import DetailPage from './components/detail/DetailPage';
+import DetailPage from './components/detail/DetailPageContainer';
 
 const CustomizedToolbar = Toolbar.extend`
   background-color: #BEB7A4;
