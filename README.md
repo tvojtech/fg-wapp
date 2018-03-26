@@ -10,7 +10,7 @@ Try https://stupefied-galileo-d94d2e.netlify.com/ (May not work)
 ## Development
 - install dependencies using `npm install` or `yarn install`
 - run app with `npm start` or `yarn start`
-- open url `http://localost:3000` in browser
+- open url `http://localhost:3000` in browser
 - to run tests run `npm test` or `yarn test`
 
 ## Production
